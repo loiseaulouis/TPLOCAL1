@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+    <html>
+    <head>
+        <title>@ViewData["TitlePage"]</title>
+        <link rel="stylesheet"  href="~/resources/Index.css"/>
+    </head>
+    <body>
+    <header>
+        <img src="~/resources/GroupeHN.png" class="image" alt="GroupeHN" />
+        <h1>@ViewData["Title"]</h1>    
+    </header>
+    <nav>
+        <ul>
+            <li><a href="/Home/Index/Form">Remplir le formulaire</a></li>
+            <li><a href="/Home/Index/OpinionList">Avis</a></li>
+        </ul>
+    </nav>
+    <section>@RenderBody()</section>
+        
+
+</body>
+</html>

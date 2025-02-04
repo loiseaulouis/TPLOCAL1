@@ -1,0 +1,114 @@
+﻿@model TPLOCAL1.Models.FormModel
+@{
+    ViewData["TitlePage"] = "Formulaire";
+    ViewData["Title"] = "Formulaire TP HN Avis";
+}
+    <form action="/Home/ValidationFormulaire" method="post">
+        
+            
+            <table>
+                <caption>Informations personnelles</caption>
+                <tr>
+                    <th><label for="Nom">Nom</label></th>
+                    <td>
+                        <input type="text" id="Nom" name="Nom" value="@Model?.Nom" />
+                       <span asp-validation-for="Nom" class="text-danger"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <th><label for="Prenom">Prénom</label></th>
+                    <td>
+                        <input type="text" id="Prenom" name="Prenom" value="@Model?.Prenom" />
+                        <span asp-validation-for="Prenom" class="text-danger"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <th><label for="Genre">Genre</label></th>
+                    <td>
+                        <select id="Genre" name="Genre" value="@Model?.Genre">
+                            <option value="" disabled selected>Selectionnez un genre</option>
+                            <option value="Homme">Homme</option>
+                            <option value="Femme">Femme</option>
+                            <option value="Autre">Autre</option>  
+                        </select>
+                         <span asp-validation-for="Genre" class="text-danger"></span>
+                    </td>
+
+                </tr>
+                 
+                <tr>
+                    <th><label for="Adresse">Adresse</label></th>
+                    <td>
+                        <input type="text" id="Adresse" name="Adresse" value="@Model?.Adresse" />
+                        <span asp-validation-for="Adresse" class="text-danger"></span>
+                    </td>
+                </tr>
+                 
+                <tr>
+                    <th><label for="CodePostal">Code Postal</label></th>
+                    <td>
+                        <input type="text" id="CodePostal" name="CodePostal" maxlength="5" value="@Model?.CodePostal" />
+                        <span asp-validation-for="CodePostal" class="text-danger"></span>
+                    </td>
+                </tr>
+                
+                <tr>
+                    <th><label for="Ville">Ville</label></th>
+                    <td>
+                        <input type="text" id="Ville" name="Ville"  value="@Model?.Ville" />
+                       <span asp-validation-for="Ville" class="text-danger"></span>
+                    </td>
+                </tr>
+                 
+                <tr>
+                    <th><label for="AdresseEmail">Adresse email</label></th>
+                    <td>
+                        <input type="email" id="AdresseEmail" name="AdresseEmail" value="@Model?.AdresseEmail" />
+                        <span asp-validation-for="AdresseEmail" class="text-danger"></span>
+                    </td>
+                </tr>
+                 
+
+            </table>
+      
+           
+            <table>
+                 <caption>Informations formation suivie</caption>
+                <tr>
+                   <th><label for="DateDeb">Date de début formation</label></th>
+                    <td>
+                        <input type="date" id="DateDeb" name="DateDeb" max="2021-01-01" />
+                       <span asp-validation-for="DateDeb" class="text-danger"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <th><label for="Formation">Formation suivie</label></th>
+                    <td>
+                        <select id="Formation" name="Formation">
+                            <option value="" disabled selected>Sélectionner une formation</option>
+                            <option value="Formation Cobol">Formation Cobol</option>
+                            <option value="Formation C#">Formation C#</option>
+                            <option value="Formation Objet">Formation Objet</option>
+                            <option value="Formation double compétences">Formation double compétences</option>
+                        </select>
+                         <span asp-validation-for="Formation" class="text-danger"></span>
+                    </td>
+                </tr>
+            </table>
+       
+            
+            <table>
+                <caption>Avis sur la formation</caption>
+                <tr>
+                    <th><label for="AvisCBL">Formation Cobol</label></th>
+                    <td><input type="text" id="AvisCBL" name="AvisCBL" /></td>
+                </tr>
+                <tr>
+                    <th><label for="AvisDotNET">Formation C#</label></th>
+                    <td><input type="text" id="AvisDotNET" name="AvisDotNET" /></td>
+                </tr>
+            </table>
+        
+        <input type="submit" value="Valider" />
+    </form>
+   
